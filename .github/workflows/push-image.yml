@@ -1,0 +1,45 @@
+name: Push Image To Repository
+
+on:
+  push:
+    branches:
+      - master
+  pull:
+    branches:
+      - master
+
+env:
+  IMAGE_NAME: eko969/hello-app:latest
+  DOCKER_USER: ${{secrets.DOCKER_USER}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
+jobs:
+
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/chekout@v2
+      - name: Test Build
+
+      run: |
+        docker build ./simple-app --file Dockerfile
+
+  push:
+    needs: test-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: Build Image
+        run |
+          docker build -t ${IMAGE_NAME}
+
+      - name: Docker login
+        run |
+          docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
+
+      - name: Push To Repository
+        RUN |
+          docker push ${IMAGE_NAME}
+
+
+  
