@@ -26,8 +26,8 @@ RUN adduser eko9x9
 USER eko9x9
 WORKDIR /home/eko9x9/app
 
-COPY --from=builder --chown=eko9x9:nodejs ./app/dist ./
-COPY --from=builder --chown=eko9x9:nodejs ./app/node_modules ./
+COPY --from=builder --chown=eko9x9:nodejs ./app/dist ./dist
+COPY --from=builder --chown=eko9x9:nodejs ./app/node_modules ./node_modules
 COPY --from=builder --chown=eko9x9:nodejs ./app/package.json ./
 
 # Change The owner!. if workdir outside directory $home uncomment bellow
