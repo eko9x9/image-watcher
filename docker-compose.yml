@@ -3,7 +3,7 @@ services:
 
   simple-app:
     build: 
-      context: ./simple-app
+      context: ./
       dockerfile: Dockerfile
     command: yarn start
     ports: 
