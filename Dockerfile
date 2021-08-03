@@ -11,7 +11,7 @@ WORKDIR /app
 
 COPY ./simple-app ./
 # copies deps
-COPY --from=deps /app/node_modules ./
+COPY --from=deps /app/node_modules ./node_modules
 RUN yarn build
 
 
