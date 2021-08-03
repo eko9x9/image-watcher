@@ -38,7 +38,7 @@ jobs:
           docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
 
       - name: Push To Repository
-        RUN |
+        run: |
           docker push ${IMAGE_NAME}
 
 
