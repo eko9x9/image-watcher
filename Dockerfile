@@ -34,4 +34,6 @@ COPY --from=builder --chown=eko9x9:nodejs ./app/tsconfig.build.json ./
 # Change The owner!. if workdir outside directory $home uncomment bellow
 # RUN chown -Rh eko9x9:nodejs ./dist
 
+EXPOSE 80
+
 CMD [ "yarn", "start" ]

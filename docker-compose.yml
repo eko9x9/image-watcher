@@ -2,15 +2,7 @@ version: "3.9"
 services: 
 
   simple-app:
-    build: 
-      context: ./
-      dockerfile: Dockerfile
-    command: yarn start
-    ports: 
-      - "80:3000"
-    volumes: 
-      - type: volume
-        target: /home/eko9x9/app/node_modules
+    image: eko969/hello-app
     networks: 
       - default
     labels: 
