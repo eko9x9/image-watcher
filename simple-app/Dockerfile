@@ -11,8 +11,9 @@ WORKDIR /home/eko9x9/app
 COPY --chown=eko9x9:nodejs ./package.json ./
 RUN yarn
 COPY --chown=eko9x9:nodejs ./ ./
+RUN yarn build
 
 # Change The owner!. if workdir outside directory $home uncomment bellow
 # RUN chown -Rh eko9x9:nodejs ./dist
 
-CMD [ "yarn start" ]
+CMD [ "yarn", "start" ]

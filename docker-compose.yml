@@ -5,6 +5,7 @@ services:
     build: 
       context: ./simple-app
       dockerfile: Dockerfile
+    command: yarn start
     ports: 
       - "80:3000"
     volumes: 
@@ -12,7 +13,8 @@ services:
         target: /home/eko9x9/app/node_modules
     networks: 
       - default
-    labels: com.centurylinklabs.watchtower.enable="true"
+    labels: 
+      - com.centurylinklabs.watchtower.enable="true"
   
   watchtower:
     image: containrrr/watchtower
