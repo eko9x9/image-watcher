@@ -8,9 +8,9 @@ RUN adduser eko9x9
 USER eko9x9
 WORKDIR /home/eko9x9/app
 
-COPY --chown=eko9x9:nodejs ./package.json ./
+COPY --chown=eko9x9:nodejs ./simple-app/package.json ./
 RUN yarn
-COPY --chown=eko9x9:nodejs ./ ./
+COPY --chown=eko9x9:nodejs ./simple-app ./
 RUN yarn build
 
 # Change The owner!. if workdir outside directory $home uncomment bellow
