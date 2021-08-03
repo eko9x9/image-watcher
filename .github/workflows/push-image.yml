@@ -23,7 +23,7 @@ jobs:
 
         run: |
           docker build . --file Dockerfile -t build-app
-          docker run build-app -d
+          docker run build-app 
 
   push:
     needs: test-build
