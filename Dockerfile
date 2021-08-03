@@ -29,6 +29,7 @@ WORKDIR /home/eko9x9/app
 COPY --from=builder --chown=eko9x9:nodejs ./app/dist ./dist
 COPY --from=builder --chown=eko9x9:nodejs ./app/node_modules ./node_modules
 COPY --from=builder --chown=eko9x9:nodejs ./app/package.json ./
+COPY --from=builder --chown=eko9x9:nodejs ./app/tsconfig.build.json ./
 
 # Change The owner!. if workdir outside directory $home uncomment bellow
 # RUN chown -Rh eko9x9:nodejs ./dist
