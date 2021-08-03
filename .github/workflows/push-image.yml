@@ -30,11 +30,11 @@ jobs:
     steps:
       - uses: action/checkout@v2
       - name: Build Image
-        run |
+        run: |
           docker build -t ${IMAGE_NAME}
 
       - name: Docker login
-        run |
+        run: |
           docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
 
       - name: Push To Repository
