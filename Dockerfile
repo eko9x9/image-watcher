@@ -9,7 +9,7 @@ RUN yarn
 FROM node:buster AS builder
 WORKDIR /app
 
-COPY ./ ./
+COPY ./simple-app ./
 # copies deps
 COPY --from=deps /app/node_modules ./
 RUN yarn build
