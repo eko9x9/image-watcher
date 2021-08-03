@@ -14,8 +14,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/.docker/config.json:/config.json
     environment: 
-      REPO_USER: ${DOCKER_USER}
-      REPO_PASS: ${DOCKER_PASSWORD}
+      REPO_USER: eko969
+      REPO_PASS: Zgdlpro059?
     command: --interval 30
 
 networks: 
