@@ -1,9 +1,9 @@
 FROM node:buster
 
 # Add Group
-RUN addgroup -g 1001 -S nodejs
+RUN addgroup nodejs
 # Add User
-RUN adduser -S eko9x9 -u 1001
+RUN adduser eko9x9
 
 USER eko9x9
 WORKDIR /home/eko9x9/app
