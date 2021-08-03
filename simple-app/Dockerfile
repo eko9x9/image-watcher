@@ -6,7 +6,7 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S eko9x9 -u 1001
 
 USER eko9x9
-WORKDIR /home/app/eko9x9
+WORKDIR /home/eko9x9/app
 
 COPY --chown=eko9x9:nodejs ./package.json ./
 RUN yarn

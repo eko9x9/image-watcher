@@ -1,0 +1,28 @@
+version: "3.9"
+services: 
+
+  simple-app:
+    build: 
+      context: ./simple-app
+      dockerfile: Dockerfile
+    ports: 
+      - "80:3000"
+    volumes: 
+      - type: volume
+        target: /home/eko9x9/app/node_modules
+    networks: 
+      - default
+    labels: com.centurylinklabs.watchtower.enable="true"
+  
+  watchtower:
+    image: containrrr/watchtower
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    environment: 
+      REPO_USER: ${username}
+      REPO_PASS: ${password}
+    command: --interval 30
+
+networks: 
+  default:
