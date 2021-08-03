@@ -5,6 +5,8 @@ services:
     image: eko969/hello-app
     networks: 
       - default
+    ports: 
+      - "3000:3000"
     labels: 
       - com.centurylinklabs.watchtower.enable="true"
   
