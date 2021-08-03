@@ -22,7 +22,7 @@ jobs:
       - name: Test Build
 
         run: |
-          docker build ./simple-app --file Dockerfile
+          docker build ../../simple-app --file Dockerfile
 
   push:
     needs: test-build
